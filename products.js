@@ -3,7 +3,7 @@
 //  It looks like "kevinspicks-20". Then every link on the site
 //  earns you commission automatically.
 // ============================================================
-const AMAZON_TAG = "KEVIN-TAG-20";
+const AMAZON_TAG = "mrallenspick2-20";
 
 const PRODUCTS = [
   // ---------- A/V GEAR ----------
