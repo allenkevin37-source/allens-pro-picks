@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Allen's Pro Picks | Real gear, real jobs, no hype</title>
+<meta name="description" content="Twenty-five years of professional A/V work, distilled into picks that actually solve the problem. A/V gear, home and pet, and business tech.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">ALLEN'S <span>PRO PICKS</span></div>
+    <nav>
+      <a href="#picks">Picks</a>
+      <a href="#about">About</a>
+      <a href="disclosure.html">Disclosure</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Real-world recommendations · No hype</div>
+    <h1>Buy it once. Use it for years.</h1>
+    <p>Twenty-five years of doing this for a living, boiled down to the gear I'd buy again with my own money. If it's on this page, it earned the spot.</p>
+    <div class="disc"><strong>Affiliate disclosure:</strong> I earn a commission from Amazon on purchases made through these links, at no extra cost to you. It never changes the price and it never changes what I recommend.</div>
+    <div class="filters">
+      <button class="on" data-cat="all">Everything</button>
+      <button data-cat="av">A/V Gear</button>
+      <button data-cat="home">Home &amp; Pet</button>
+      <button data-cat="biz">Business Tech</button>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <div id="picks" class="grid"></div>
+</main>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>Who's picking?</h2>
+    <p>Kevin Allen. Twenty-five years in professional audio and video, most of it running events where there's no second take. I've loaded in at 5am, fixed a dead channel mid-toast, and learned which gear survives a real party and which gear survives a spec sheet.</p>
+    <p>Every pick here has a reason and an honest "skip it if." That's the whole point. If something stops being worth the money, it comes off this page.</p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    &copy; 2026 Allen's Pro Picks · Dallas–Fort Worth, TX<br>
+    As an Amazon Associate I earn from qualifying purchases. · <a href="disclosure.html">Full disclosure</a>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script>
+  const grid = document.getElementById('picks');
+  render(grid, 'all');
+  document.querySelectorAll('.filters button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.filters button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      render(grid, b.dataset.cat);
+    });
+  });
+</script>
+</body>
+</html>
